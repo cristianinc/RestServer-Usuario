@@ -14,13 +14,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
-app.use( require('./routes/usuario') );
-
-
-// mongoose.connect('mongodb://localhost:27017/cafe', (err,res) => {
-//     if(err) throw err;
-//     console.log('BASE DE DATOS ONLINE');
-// });
+//configuracion global de rutas
+app.use( require('./routes/index') );
 
 mongoose.connect(process.env.URLDB, 
                             { useNewUrlParser: true,useUnifiedTopology: true }
